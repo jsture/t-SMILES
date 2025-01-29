@@ -147,6 +147,8 @@ jupyterlab-server==2.27.3
     # via jupyterlab
 kiwisolver==1.4.8
     # via matplotlib
+levenshtein==0.26.1
+    # via python-levenshtein
 loguru==0.7.3
     # via datamol
 markupsafe==3.0.2
@@ -242,6 +244,8 @@ python-dateutil==2.9.0.post0
     # via pandas
 python-json-logger==3.2.1
     # via jupyter-events
+python-levenshtein==0.26.1
+    # via t-smiles
 pytz==2024.2
     # via pandas
 pyyaml==6.0.2
@@ -251,6 +255,8 @@ pyzmq==26.2.0
     # via ipykernel
     # via jupyter-client
     # via jupyter-server
+rapidfuzz==3.11.0
+    # via levenshtein
 rdkit==2024.9.4
     # via datamol
     # via t-smiles
