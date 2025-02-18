@@ -92,7 +92,12 @@ class CNJMolUtil:
         return sml, skeleton
 
     def aug_ex_smiles(
-        bfs_ex_smiles, n_aug=10, code="smiles", isomericSmiles=True, kekuleSmiles=False
+        self,
+        bfs_ex_smiles,
+        n_aug=10,
+        code="smiles",
+        isomericSmiles=True,
+        kekuleSmiles=False,
     ):
         n_frags = len(bfs_ex_smiles)
 
@@ -118,7 +123,7 @@ class CNJMolUtil:
 
         return aug_ex_smiles
 
-    def split_ex_smiles(ex_smiles, delimiter="^"):
+    def split_ex_smiles(self, ex_smiles, delimiter="^"):
         split = delimiter
 
         output = []

@@ -70,7 +70,10 @@ def CNJASM_HParam():
 
 
 class CNJMolAssembler:
-    def get_hparam(asm_alg="CALG_TSDY"):
+    def __init__(self) -> None:
+        self.cmu = CNJMolUtil()
+
+    def get_hparam(self, asm_alg="CALG_TSDY"):
         # alg='No_Dummy'     'CALG_TSSA'
         # alg='Dummy',       'CALG_TSDY',
         # alg='Dummy_AEID',  'CALG_TSID',
@@ -1283,7 +1286,7 @@ class CNJMolAssembler:
         return dec_smile
 
     def decode_single(
-        bfs_ex_smiles, ctoken, asm_alg="CALG_TSDY", n_samples=1, p_mean=None
+        self, bfs_ex_smiles, ctoken, asm_alg="CALG_TSDY", n_samples=1, p_mean=None
     ):
         try:
             hparam = CNJMolAssembler.get_hparam(asm_alg)
@@ -1293,13 +1296,14 @@ class CNJMolAssembler:
             errors = []
             re_ex_smils = []
             new_vocs = []
+            skt_wrong = 0
 
             for i, sub_s in enumerate(sub_smils):
                 if not isinstance(sub_s, (str)):
                     print(f"[test_rebuild_file is not a string-{i}:-{bfs_ex_smiles}]")
                     continue
                 else:
-                    bfs_ex_smiles = CNJMolUtil.split_ex_smiles(sub_s, delimiter="^")
+                    bfs_ex_smiles = self.cmu.split_ex_smiles(sub_s, delimiter="^")
 
                 if i > 0:
                     re_smils += "."

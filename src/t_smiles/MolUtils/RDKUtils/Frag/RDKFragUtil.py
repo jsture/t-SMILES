@@ -76,7 +76,7 @@ class RDKFragUtil:
     dummy_char = "*"
     dummy_mol = Chem.MolFromSmiles("[*]")
 
-    def get_atomenv_table():
+    def get_atomenv_table(self):
         s_file = [
             r"D:\ProjectTF\RawData\AtomEnv\MIT_mixed\MIT_mixed_atomenv_r0.csv",
             r"D:\ProjectTF\RawData\AtomEnv\MIT_mixed\MIT_mixed_atomenv_r1.csv",
@@ -99,7 +99,7 @@ class RDKFragUtil:
 
         return atomenv_dict
 
-    def get_dummy_atomenv(frag_mol, dummy_donds, radius=3):
+    def get_dummy_atomenv(self, frag_mol, dummy_donds, radius=3):
         dummy_atomenv = {}
 
         try:
@@ -130,7 +130,7 @@ class RDKFragUtil:
 
         return dummy_atomenv
 
-    def score_atomenv(atomenv1, atomenv2, atomenv_dict, radius=3):
+    def score_atomenv(self, atomenv1, atomenv2, atomenv_dict, radius=3):
         score = 0
 
         for i in range(0, radius):
@@ -150,7 +150,7 @@ class RDKFragUtil:
 
         return score
 
-    def get_dummy_bond_pair(fraga, fragb):
+    def get_dummy_bond_pair(self, fraga, fragb):
         nba = None
         nbb = None
         for a in fraga.GetAtoms():

@@ -12,7 +12,7 @@ from t_smiles.MolUtils.RDKUtils.Frag.RDKFragBrics import RDKFragBrics
 from t_smiles.MolUtils.RDKUtils.Frag.RDKFragBricsDummy import RDKFragBricsDummy
 from t_smiles.MolUtils.RDKUtils.Frag.RDKFragMMPA import RDKFragMMPA
 from t_smiles.MolUtils.RDKUtils.Frag.RDKFragScaffold import RDKFragScaffold
-from MolUtils.RDKUtils.Frag.RDKFragRBrics import RDKFragRBrics
+from t_smiles.MolUtils.RDKUtils.Frag.RDKFragRBrics import RDKFragRBrics
 
 
 class MolTreeUtils:
